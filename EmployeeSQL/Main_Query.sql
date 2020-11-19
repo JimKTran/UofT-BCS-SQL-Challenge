@@ -32,10 +32,26 @@ FROM employees e
 			ON e.emp_title_id = ti.title_id
 
 -- 4. List the department of each employee with the following information: employee number, last name, first name, and department name.
+-- subquery method:
 
+-- SELECT emp_no as "Employee Number", last_name as "Last Name", first_name as "First Name"
+-- FROM employees e
+-- WHERE e.emp_no
+-- IN (	
+-- 	SELECT de.emp_no 
+-- 	FROM dept_emp de
+-- 	WHERE de.dept_no 
+-- 	IN (
+-- 		SELECT d.dept_no 
+-- 		FROM departments d))
 
-
-
+-- joining method
+SELECT e.emp_no as "Employee Number", e.last_name as "Last Name", e.first_name as "First Name", d.dept_name as "Department Name"
+FROM employees e
+	JOIN dept_emp de
+	ON e.emp_no = de.emp_no
+		JOIN departments d
+		ON de.dept_no = d.dept_no
 
 
 
