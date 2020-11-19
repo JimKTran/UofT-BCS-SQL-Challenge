@@ -22,7 +22,12 @@ ORDER BY e.hire_date DESC;
 
 -- 3. List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
 
-SELECT dm.dept_no as "Department Number", d.dept_name as "Department Name", e.emp_no as "Employee Number", e.last_name as "Last Name", e.first_name as "First Name", ti.title as "Title"
+SELECT dm.dept_no as "Department Number"
+		, d.dept_name as "Department Name"
+		, e.emp_no as "Employee Number"
+		, e.last_name as "Last Name"
+		, e.first_name as "First Name"
+		, ti.title as "Title"
 FROM employees e
 	JOIN dept_manager dm
 	ON e.emp_no = dm.emp_no
@@ -34,26 +39,31 @@ FROM employees e
 -- 4. List the department of each employee with the following information: employee number, last name, first name, and department name.
 -- subquery method:
 
--- SELECT emp_no as "Employee Number", last_name as "Last Name", first_name as "First Name"
--- FROM employees e
--- WHERE e.emp_no
--- IN (	
--- 	SELECT de.emp_no 
--- 	FROM dept_emp de
--- 	WHERE de.dept_no 
--- 	IN (
--- 		SELECT d.dept_no 
--- 		FROM departments d))
+-- SELECT emp_no as "Employee Number"
+-- 		, last_name as "Last Name"
+-- 		, first_name as "First Name"
+-- 	FROM employees e
+-- 	WHERE e.emp_no
+-- 	IN (	
+-- 		SELECT de.emp_no 
+-- 		FROM dept_emp de
+-- 		WHERE de.dept_no 
+-- 		IN (
+-- 			SELECT d.dept_no 
+-- 			FROM departments d))
 
 -- joining method
-SELECT e.emp_no as "Employee Number", e.last_name as "Last Name", e.first_name as "First Name", d.dept_name as "Department Name"
+SELECT e.emp_no as "Employee Number"
+		, e.last_name as "Last Name"
+		, e.first_name as "First Name"
+		, d.dept_name as "Department Name"
 FROM employees e
 	JOIN dept_emp de
 	ON e.emp_no = de.emp_no
 		JOIN departments d
 		ON de.dept_no = d.dept_no
 
-
+-- 5. List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
 
 
 
