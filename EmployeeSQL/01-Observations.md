@@ -1,5 +1,5 @@
 # Unit 8 | SQL Homework - Employee Database: A Mystery in Two Parts
-### _Submitted November 26, 2020_
+#### _Submitted November 26, 2020_
 #### _By: Jim Tran_
 
 ![SQL](SQL_Pic.png)
