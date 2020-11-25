@@ -33,11 +33,11 @@ SELECT dm.dept_no as "Department Number"
 		, ti.title as "Title"
 FROM employees e
 	JOIN dept_manager dm
-	ON e.emp_no = dm.emp_no
-		JOIN departments d
+		ON e.emp_no = dm.emp_no
+	JOIN departments d
 		ON dm.dept_no = d.dept_no
-			JOIN titles ti
-			ON e.emp_title_id = ti.title_id;
+	JOIN titles ti
+		ON e.emp_title_id = ti.title_id;
 			
 -- ================================================================================================================================================================
 -- 4. List the department of each employee with the following information: employee number, last name, first name, and department name.
@@ -48,8 +48,8 @@ SELECT e.emp_no as "Employee Number"
 		, d.dept_name as "Department Name"
 FROM employees e
 	JOIN dept_emp de
-	ON e.emp_no = de.emp_no
-		JOIN departments d
+		ON e.emp_no = de.emp_no
+	JOIN departments d
 		ON de.dept_no = d.dept_no;
 		
 -- ================================================================================================================================================================
@@ -70,8 +70,8 @@ SELECT e.emp_no as "Employee Number"
 		, d.dept_name as "Department Name"
 FROM employees e
 	JOIN dept_emp de
-	ON e.emp_no = de.emp_no
-		JOIN departments d
+		ON e.emp_no = de.emp_no
+	JOIN departments d
 		ON de.dept_no = d.dept_no
 		WHERE d.dept_name = 'Sales';
 
@@ -84,8 +84,8 @@ SELECT e.emp_no as "Employee Number"
 		, d.dept_name as "Department Name"
 FROM employees e
 	JOIN dept_emp de
-	ON e.emp_no = de.emp_no
-		JOIN departments d
+		ON e.emp_no = de.emp_no
+	JOIN departments d
 		ON de.dept_no = d.dept_no
 		WHERE d.dept_name 
 		IN ('Sales', 'Development');
