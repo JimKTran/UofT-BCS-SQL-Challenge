@@ -3,7 +3,19 @@
 ![SQL](SQL_Pic.png)
 
 #### Data Modeling
-The use of Quick Database Diagram to map out the various csv raw data files was quick and very helpful [ERD](ERD.png).
+The use of Quick Database Diagram to map out the various csv raw data files to convert to data tables was quick and very helpful
+![ERD](02-ERD.png).
+The diagram identifies the primary key, foreign key and data types of each field; and shows the data linkages between each of the csv data files.
+1. employees
+   * emp_no int PK
+     emp_title_id varchar FK >- titles.title_id
+     birth_date date
+     first_name varchar
+    last_name varchar
+    sex varchar
+    hire_date date
+
+2. salaries
 
 #### Data Analysis
 
