@@ -1,11 +1,17 @@
 # Unit 8 | SQL Homework - Employee Database: A Mystery in Two Parts
+## _Submitted November 26, 2020_
+### _By: Jim Tran_
 
 ![SQL](SQL_Pic.png)
 
 #### Data Modeling
-The use of Quick Database Diagram to map out the various csv raw data files to convert to data tables was quick and very helpful
-![ERD](02-ERD.png).
+The use of Quick Database Diagram to map out the various csv raw data files to convert to data tables was quick and very helpful.
+
+![ERD](02-ERD.png)
+
+
 The diagram identifies the primary key, foreign key and data types of each field; and shows the data linkages between each of the csv data files.
+
 1. employees
    * emp_no int PK
      emp_title_id varchar FK >- titles.title_id
@@ -16,6 +22,25 @@ The diagram identifies the primary key, foreign key and data types of each field
     hire_date date
 
 2. salaries
+    * emp_no int FK - employees.emp_no
+      salary int
+
+3. dept_emp
+    * emp_no int FK >- employees.emp_no
+      dept_no varchar FK >- departments.dept_no
+
+4. dept_manager
+    * dept_no varchar
+      emp_no int FK - employees.emp_no
+
+5. departments
+    * dept_no varchar PK
+      dept_name varchar
+
+6. titles
+    * title_id varchar PK
+      title varchar
+
 
 #### Data Analysis
 
