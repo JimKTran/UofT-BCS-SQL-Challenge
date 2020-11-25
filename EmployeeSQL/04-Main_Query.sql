@@ -1,4 +1,5 @@
 -- Data Analysis for SQL homework
+
 -- ================================================================================================================================================================
 -- 1. List the following details of each employee: employee number, last name, first name, sex, and salary.
 
@@ -40,23 +41,7 @@ FROM employees e
 			
 -- ================================================================================================================================================================
 -- 4. List the department of each employee with the following information: employee number, last name, first name, and department name.
--- subquery method:
--------------------
--- SELECT emp_no as "Employee Number"
--- 		, last_name as "Last Name"
--- 		, first_name as "First Name"
--- 	FROM employees e
--- 	WHERE e.emp_no
--- 	IN (	
--- 		SELECT de.emp_no 
--- 		FROM dept_emp de
--- 		WHERE de.dept_no 
--- 		IN (
--- 			SELECT d.dept_no 
--- 			FROM departments d));
 
--- joining method:
-------------------
 SELECT e.emp_no as "Employee Number"
 		, e.last_name as "Last Name"
 		, e.first_name as "First Name"
@@ -114,7 +99,7 @@ FROM employees e
 GROUP BY e.last_name
 ORDER BY e.last_name DESC
 
-
+-- ================================================================================================================================================================
 
 
 
