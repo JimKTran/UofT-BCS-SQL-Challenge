@@ -1,2 +1,2 @@
 #  Add your password
-Password = "coldam1201"
+Password = "password"
